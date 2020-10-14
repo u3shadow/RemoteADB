@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
                 } catch (e: IOException) {
                     e.printStackTrace()
                 }
-            }.show()
+            }.setCancelable(false).show()
 
     }
 
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
         val ip: String = Formatter.formatIpAddress(wm.connectionInfo.ipAddress)
         AlertDialog.Builder(this).setMessage("设置完成，请在同一局域网下使用以下命令连接设备\nadb connect ip $ip:5555").setPositiveButton(
             "确认"
-        ) { _, _ -> finish() }.show()
+        ) { _, _ -> finish() }.setCancelable(false).show()
     }
 
 }

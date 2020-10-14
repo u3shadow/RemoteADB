@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         os.flush()
         val wm = applicationContext.getSystemService(WIFI_SERVICE) as WifiManager
         val ip: String = Formatter.formatIpAddress(wm.connectionInfo.ipAddress)
-        AlertDialog.Builder(this).setMessage("设置完成，请在同一局域网下使用以下命令连接设备\nadb connect ip $ip:5555").setPositiveButton(
+        AlertDialog.Builder(this).setMessage("设置完成，请在同一局域网下使用以下命令连接设备\nadb connect $ip:5555").setPositiveButton(
             "确认"
         ) { _, _ -> finish() }.setCancelable(false).show()
     }
